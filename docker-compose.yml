@@ -1,0 +1,41 @@
+version: "3"
+
+services:
+  webserver:
+    build: .
+    container_name: webserver
+    restart: 'always'
+    links:
+      - mysql
+    ports:
+      - "8888:80"
+    environment:
+      DATABASE_HOSTNAME: 'mysql'
+    volumes: 
+      - ${DOCUMENT_ROOT-.}:/var/www/html
+      - ${PHP_INI-./config/php/php.ini}:/usr/local/etc/php/php.ini
+      - ${VHOSTS_DIR-./config/vhosts}:/etc/apache2/sites-enabled
+  mysql:
+    image: mysql:5.7
+    restart: 'always'
+    ports:
+      - "3306:3306"
+    volumes: 
+      - /var/log/mysql
+      - /var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_superp@55
+      MYSQL_DATABASE: demartinirv
+      MYSQL_USER: masterchief
+      MYSQL_PASSWORD: superp@55
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    ports:
+      - '8080:80'
+    volumes: 
+      - /sessions

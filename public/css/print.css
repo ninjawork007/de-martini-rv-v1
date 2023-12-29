@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+
+#main-nav ul {
+	display: none;
+}
+
+#banner {
+	display: none;
+}
+
+#site-title {
+	display: none;
+}
+
+#cbanner {
+	display: none;
+}
+
+img.img-sold-580 {
+	display: none !important;
+}
+
+.img-sold {
+	display: none !important;
+}
+
+#contact-box {
+	display: none;
+}
+
+.tiled-header {
+	display: none;
+}
+
+.center-block {
+    display: block;
+    margin: 0 auto;
+	width: 450px !important;
+}
+
+div.buttons {
+	display: none;
+}
+
+div#searches {
+	display: none;
+}

@@ -1,0 +1,12 @@
+.DS_Store
+application/config/config_server.php
+application/config/database_server.php
+public/uploads/*
+public/tmp/*
+application/config/config_local.php
+application/config/database_local.php
+application/config/sangar_auth_local.php
+application/config/config_blank.php
+application/config/database_blank.php
+application/config/sangar_auth_blank.php
+phpMyAdmin
